@@ -39,6 +39,14 @@ const schema = makeExecutableSchema({
 
 const apollo = new ApolloServer({ 
    schema,
+   formatError: error => {
+      console.log(error);
+      return error;
+    },
+    formatResponse: response => {
+      console.log(response);
+      return response;
+    },
    context: async (ctx) => { 
       const userCurrent = await getAuthToken(ctx.req);
       const prisma = await new Prisma({
@@ -52,6 +60,25 @@ const apollo = new ApolloServer({
          userCurrent,
       }
    },
+   engine: {
+      apiKey: "YOUAPIKEYHERE",
+      generateClientInfo: ({
+         request
+       }) => {
+         const headers = request.http && request.http.headers;
+         if(headers) {
+           return {
+             clientName: headers['apollo-client-name'],
+             clientVersion: headers['apollo-client-version'],
+           };
+         } else {
+           return {
+             clientName: "Unknown Client",
+             clientVersion: "Unversioned",
+           };
+         }
+       },
+    },
    tracing: true,
    introspection: true,
    playground: {
