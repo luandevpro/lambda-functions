@@ -4,7 +4,8 @@
    "description": "",
    "main": "index.js",
    "scripts": {
-      "start": "nodemon src/index"
+      "start": "nodemon src/index",
+      "netlify-lambda": "netlify-lambda serve src"
    },
    "keywords": [],
    "author": "",
@@ -27,6 +28,7 @@
       "graphql-yoga": "^1.17.4",
       "jsonwebtoken": "^8.5.1",
       "lodash": "^4.17.11",
+      "netlify-lambda": "^1.4.7",
       "prisma-binding": "^2.3.10",
       "serverless-http": "^2.0.1",
       "serverless-offline": "^4.10.0",

@@ -65,6 +65,7 @@ const apollo = new ApolloServer({
     }
 })
 app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
+
 apollo.applyMiddleware({ app });
 
 // app.listen({ port: 4000 }, () =>
