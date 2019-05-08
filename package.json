@@ -1,0 +1,28 @@
+{
+   "name": "graphql-basics",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "start": "nodemon src/index --exec babel-node"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "apollo-server": "^2.4.8",
+      "apollo-server-express": "^2.4.8",
+      "babel-cli": "^6.26.0",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-preset-env": "^1.7.0",
+      "bcryptjs": "^2.4.3",
+      "cors": "^2.8.5",
+      "graphql-middleware": "^3.0.2",
+      "graphql-playground-middleware-express": "^1.7.12",
+      "graphql-tools": "^4.0.4",
+      "graphql-yoga": "^1.17.4",
+      "jsonwebtoken": "^8.5.1",
+      "lodash": "^4.17.11",
+      "prisma-binding": "^2.3.10"
+   }
+}

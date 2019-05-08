@@ -1,0 +1,18 @@
+{
+   "projects": {
+      "prisma": {
+         "schemaPath" : "src/generated/prisma.graphql",
+         "extensions": {
+            "endpoints" : {
+               "default" : {
+                  "url": "http://134.209.102.11:4466/graphql/dev",
+                  "headers": {
+                     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InNlcnZpY2UiOiJncmFwaHFsQGRldiIsInJvbGVzIjpbImFkbWluIl19LCJpYXQiOjE1NTcwNTAyMTYsImV4cCI6MTU1NzY1NTAxNn0.j7meVnDbl1Y70CvsoYfdrZuk915SJD54GylLmgFYzXc"
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+        

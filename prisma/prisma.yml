@@ -1,0 +1,5 @@
+endpoint: http://134.209.102.11:4466/graphql/dev
+datamodel: datamodel.prisma
+
+secret: "tacayaha"
+
