@@ -1,4 +1,4 @@
-export const Comment = `
+module.exports.Comment = `
    extend type Query {
       comments: [Comment!]!
    }

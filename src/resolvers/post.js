@@ -1,4 +1,4 @@
-export const Post = {
+module.exports.Post = {
    Post: {
       user: async (parent,args,ctx,info) => {
          const user = await parent.user

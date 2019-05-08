@@ -1,8 +1,8 @@
-import bcryptjs from "bcryptjs"
-import jwt from "jsonwebtoken"
-import { assign } from "lodash"
+const bcryptjs = require("bcryptjs")
+const jwt = ("jsonwebtoken")
+const { assign } = require("lodash")
 
-export const Mutation = {
+module.exports.Mutation = {
    Mutation: {
       createUser: async (parent,args, ctx ,info) => {
          const password = await bcryptjs.hash(args.data.password, 10)

@@ -1,4 +1,4 @@
-export const Comment = {
+module.exports.Comment = {
    Comment: {
       user: async (parent,args, ctx ,info) => {
          console.log(parent,"user")

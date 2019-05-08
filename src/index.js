@@ -1,23 +1,25 @@
-import {
+const {
    ApolloServer,
    makeExecutableSchema,
    AuthenticationError,
    ForbiddenError
- } from 'apollo-server-express';
-import express from "express";
-import cors from 'cors';
-import { Prisma } from "prisma-binding"
-import { merge } from 'lodash';
-import { User , Post , Comment , Input } from "./typeDefs"
-import { 
-   Query as resolverQuery , 
-   Mutation as resolverMutation,
-   User as resolverUser,
-   Post as resolverPost,
-   Comment as resolverComment
-} from "./resolvers"
-import graphiql from "graphql-playground-middleware-express";
-import getAuthToken from "./utils/getAuthToken"
+ } = require('apollo-server-express');
+const express = require("express");
+const cors = require('cors');
+const { Prisma } = require("prisma-binding")
+const { merge } = require('lodash');
+const { User , Post , Comment , Input } = require("./typeDefs")
+const { 
+   resolverQuery , 
+   resolverMutation ,
+    resolverUser,
+   resolverPost,
+   resolverComment
+} = require("./resolvers")
+const serverless = require("serverless-http");
+const expressPlayground = require('graphql-playground-middleware-express')
+  .default
+const getAuthToken = require("./utils/getAuthToken")
 
 const app = express();
 app.use(cors({
@@ -62,9 +64,11 @@ const apollo = new ApolloServer({
       }
     }
 })
-app.get("/playground", graphiql({ endpoint: "/graphql" }));
+app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 apollo.applyMiddleware({ app });
 
-app.listen({ port: 4000 }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${apollo.graphqlPath}`)
-);
+// app.listen({ port: 4000 }, () =>
+//   console.log(`🚀 Server ready at http://localhost:4000${apollo.graphqlPath}`)
+// );
+
+module.exports.handler = serverless(app);

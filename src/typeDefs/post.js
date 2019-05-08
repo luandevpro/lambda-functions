@@ -1,4 +1,4 @@
-export const Post = `
+module.exports.Post = `
    extend type Query {
       posts: [Post!]!
       post(where: PostWhereUniqueInput!): Post

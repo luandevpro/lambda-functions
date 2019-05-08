@@ -1,4 +1,4 @@
-export const Query = {
+module.exports.Query = {
    Query: {
       users: async (parent, args , ctx ,info) => {
          if(!ctx.userCurrent.userId){

@@ -1,4 +1,4 @@
-export const User = `
+module.exports.User = `
    type Query {
       users: [User!]!
    }

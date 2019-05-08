@@ -1,9 +1,9 @@
-import { User } from "./user"
-import { Post } from "./post"
-import { Comment } from "./comment"
-import { Input } from "./input"
+const { User }     = require("./user")
+const { Post }     = require("./post")
+const { Comment }  = require("./comment")
+const { Input }    = require("./input")
 
-export {
+module.exports = {
    User,
    Post,
    Comment,

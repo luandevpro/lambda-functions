@@ -1,4 +1,4 @@
-export const Input = `
+module.exports.Input = `
    input PostCreateManyWithoutUserInput {
       create: [PostCreateWithoutUserInput!]
       connect: [PostWhereUniqueInput!]

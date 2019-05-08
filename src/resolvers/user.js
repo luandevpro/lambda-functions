@@ -1,4 +1,4 @@
-export const User = {
+module.exports.User = {
    User: {
       posts: async (parent,args, ctx ,info) => {
          const posts = await parent.posts

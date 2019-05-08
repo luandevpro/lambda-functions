@@ -1,0 +1,17 @@
+service: aws-nodejs
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+
+functions:
+  hello:
+    handler: src/index.handler
+    events:
+      - http: ANY /
+      - http: "ANY {proxy+}"
+
+plugins:
+  - serverless-offline
